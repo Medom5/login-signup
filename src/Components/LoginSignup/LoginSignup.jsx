@@ -15,10 +15,12 @@ const LoginSignup = () => {
         <div className="underline"></div>
       </div>
       <div className="inputs">
-        <div className="input">
-          <img src={user_icon} alt="" />
-          <input type="text" placeholder="User" />
-        </div>
+        {action === "Sign Up" && (
+          <div className="input">
+            <img src={user_icon} alt="" />
+            <input type="text" placeholder="User" />
+          </div>
+        )}
         <div className="input">
           <img src={email_icon} alt="" />
           <input type="email" placeholder="Email" />
@@ -28,9 +30,11 @@ const LoginSignup = () => {
           <input type="password" placeholder="Password" />
         </div>
       </div>
-      <div className="forgot-password">
-        Forgot Password? <span> Click here!</span>
-      </div>
+      {action === "Login" && (
+        <div className="forgot-password">
+          Forgot Password? <span> Click here!</span>
+        </div>
+      )}
       <div className="submit-container">
         <div
           className={action === "Login" ? "submit gray" : "submit"}
